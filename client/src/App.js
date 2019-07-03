@@ -11,7 +11,9 @@ class App extends React.Component{
     //   }
     // });
     const socket = socketIOClient('http://localhost:5000/');
-    socket.on('join', 'test');
+    socket.on('join', 'test', error => {
+      console.log(error)
+    });
   }
 
   render() {
