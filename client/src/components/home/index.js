@@ -1,9 +1,20 @@
 import React from 'react';
+import socketIOClient from "socket.io-client";
 
 class Home extends React.Component {
   state = {
     roomText: '',
     idText: ''
+  }
+
+  componentDidMount() {
+    const socket = socketIOClient('http://localhost:5000/');
+    socket.emit('join', 'test', error => {
+      if (error) console.log(error)
+    });
+    // socket.on('greeting', message => {
+    //   console.log(message);
+    // })
   }
 
   setIdText = e => this.setState({idText: e.target.value});
@@ -16,6 +27,7 @@ class Home extends React.Component {
   onEnter = e => {
     e.preventDefault();
   }
+
   render() {
     const {roomText, idText} = this.state;
     
@@ -31,7 +43,7 @@ class Home extends React.Component {
         </section>
   
         <section className='title'>
-        <h1>Trivia Game</h1>
+          <h1>Trivia Game</h1>
         </section>
   
         <section className='form-divider'>
@@ -48,7 +60,6 @@ class Home extends React.Component {
               value={idText} 
               onChange={(e) => this.setIdText(e.target.value)} 
             />
-  
             <button>Enter</button>
           </form>
         </section>
