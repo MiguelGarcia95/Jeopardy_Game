@@ -108,7 +108,42 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
 }
 
 @media (max-width: 750px) {
+  @formHeight: 200px;
+  @formWidth: 100%;
+  @paddingHeight: 30px;
+  .app {
+    .form-container {
+      width: @formWidth;
+      height: @formHeight;
+      padding: @paddingHeight;
+
+      input, button {height: @paddingHeight;}
+  
+      label {
+        line-height: @paddingHeight;
+        font-size: 1.1em;
+      }
+  
+      input {margin-top: @paddingHeight;}
+  
+      &.enter-room {
+        right: unset;
+        bottom: @formHeight;
+        box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.5);
+      } 
+  
+      &.create-room {
+        left: unset;
+        top: @formHeight;
+        box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.5);
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
   @formHeight: 160px;
+  @formHeight: 200px;
   // @formHeight: 120px;
   // @formWidth: 350px;
   @formWidth: 100%;
@@ -137,7 +172,7 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
     }
     .form-container {
       width: @formWidth;
-      // height: @formHeight;
+      height: @formHeight;
       // position: absolute;
 
       padding: @paddingHeight;
