@@ -18,16 +18,28 @@ body {padding: 0; margin: 0;}
   .form-container {
     width: @formWidth;
     height: @formHeight;
-    background-color: red;
-    // position: relative;
+    // background-color: red;
+    position: absolute;
     padding: 0 @paddingHeight;
     box-sizing: border-box;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    margin: auto;
     input, button {
       border: none;
       width: @fullWidth;
       padding: 0;      
       box-sizing: border-box;
       height: @paddingHeight;
+    }
+    label {
+      position: absolute;
+      line-height: 40px;
+      color: white;
+      text-align: center;
+      font-size: 1.3em;
+      left: 0; right: 0;
+      margin: auto;
     }
     input {
       padding: 5px;
@@ -39,11 +51,13 @@ body {padding: 0; margin: 0;}
     }
 
     &.enter-room {
-
+      // bottom: 160px;
+      left: 400px;
     } 
 
     &.create-room {
-
+      // top: 160px;
+      right: 400px;
     }
   }
 }
