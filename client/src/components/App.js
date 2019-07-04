@@ -4,16 +4,10 @@ import './App.css';
 
 class App extends React.Component{
   componentDidMount() {
-    // socket.emit('join', {}, (error) => {
-    //   if (error) {
-    //     alert(error);
-    //   }
-    // });
     const socket = socketIOClient('http://localhost:5000/');
     socket.emit('join', 'test', error => {
-      console.log(error)
+      if (error) console.log(error)
     });
-
     socket.on('greeting', message => {
       console.log(message);
     })
