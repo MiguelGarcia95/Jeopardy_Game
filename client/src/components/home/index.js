@@ -23,11 +23,11 @@ function Home() {
       
       <section className='form-container enter-room'>
         <form onSubmit={onEnter} >
-          <label htmlFor='input'>Enter Room Id</label>
+          <label htmlFor='input'>Join Room</label>
           <input 
             type='text'
             id='input'
-            placeholder='Enter Room Id'
+            placeholder='Enter Room Id Here ...'
             value={idText} 
             onChange={(e) => setIdText(e.target.value)} 
           />
@@ -42,7 +42,7 @@ function Home() {
           <input 
             type='text'
             id='input'
-            placeholder='Game Room'
+            placeholder='Enter Game Room ...'
             value={roomText} 
             onChange={(e) => setRoomText(e.target.value)} 
           />
