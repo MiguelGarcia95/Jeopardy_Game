@@ -56,7 +56,7 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
 
     label {
       position: absolute;
-      line-height: 40px;
+      line-height: @paddingHeight;
       text-align: center;
       font-size: 1.3em;
       left: 0; right: 0;
@@ -97,7 +97,7 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
 }
 
 @media (max-width: 950px) {
-  @formWidth: 400px;
+  @formWidth: 350px;
   .app {
     .form-container {
       width: @formWidth;
@@ -107,10 +107,13 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
   }
 }
 
-@media (max-width: 850px) {
-  // @formHeight: 160px;
-  @formWidth: 400px;
+@media (max-width: 750px) {
+  @formHeight: 160px;
+  // @formHeight: 120px;
+  // @formWidth: 350px;
+  @formWidth: 100%;
   // @paddingHeight: 40px;
+  @paddingHeight: 30px;
   .app {
     // background-color: @bgColor;
     // width: @pageWidth;
@@ -136,7 +139,9 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
       width: @formWidth;
       // height: @formHeight;
       // position: absolute;
-      // padding: 0 @paddingHeight;
+
+      padding: @paddingHeight;
+      
       // left: 0; right: 0;
       // top: 0; bottom: 0;
       // margin: auto;
@@ -144,34 +149,38 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
         // width: @fullWidth;
         // padding: 0;      
         // box-sizing: border-box;
-        // height: @paddingHeight;
+        height: @paddingHeight;
         // font-size: 1em;
       }
   
       label {
         // position: absolute;
-        // line-height: 40px;
+        line-height: @paddingHeight;
         // text-align: center;
-        // font-size: 1.3em;
+        font-size: 1.1em;
         // left: 0; right: 0;
         // margin: auto;
       }
   
       input {
         // padding: 5px;
-        // margin-top: @paddingHeight;
+        margin-top: @paddingHeight;
         // border-bottom: 1px solid white;
         // margin-bottom: 20px;
       }
   
       &.enter-room {
-        right: @formWidth;
-        // box-shadow: 1px 0px 0px 0px rgba(0,0,0,0.5);
+        // right: @formWidth;
+        right: unset;
+        bottom: @formHeight;
+        box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.5);
       } 
   
       &.create-room {
-        left: @formWidth;
-        // box-shadow: -1px 0px 0px 0px rgba(0,0,0,0.5);
+        // left: @formWidth;
+        left: unset;
+        top: @formHeight;
+        box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.5);
       }
     }
   }
