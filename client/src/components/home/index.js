@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Index() {
+function Home() {
   const [roomText, setRoomText] = useState("");
   const onSubmit = e => {
     e.preventDefault();
@@ -8,7 +8,10 @@ function Index() {
 
   return (
     <section className='app'>
-      <section className='form-container'>
+      <section className='form-container enter-room'>
+
+      </section>
+      <section className='form-container create-room'>
         <form onSubmit={onSubmit} >
           <input 
             type='text' 
@@ -16,7 +19,7 @@ function Index() {
             value={roomText} 
             onChange={(e) => setRoomText(e.target.value)} 
           />
-          
+
           <input type='submit' />
         </form>
       </section>
@@ -24,4 +27,4 @@ function Index() {
   )
 }
 
-export default Index;
+export default Home;
