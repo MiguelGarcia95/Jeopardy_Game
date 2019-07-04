@@ -1,6 +1,7 @@
 //out: styles.css, compress: true, sourcemap: false
 
 @bgColor: #6643b5;
+@buttonBgColor: #c84361;
 @fullWidth: 100%;
 @fullHeight: 100%;
 @pageWidth: 100vw;
@@ -50,6 +51,7 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
       box-sizing: border-box;
       height: @paddingHeight;
       font-size: 1em;
+      &:focus {outline:none;}
     }
 
     label {
@@ -74,13 +76,12 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
       &::placeholder {color: @fontColor; opacity: 1;}
       &:-ms-input-placeholder {color: @fontColor;}
       &::-ms-input-placeholder {color: @fontColor;}
-      &:focus {outline:none;}
     }
 
     button {
       color: @fontColor;
-      // background-color: @bgColor;
-      background-color: #c84361;
+      background-color: @buttonBgColor;
+      cursor: pointer;
     }
 
     &.enter-room {
@@ -91,6 +92,84 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
     &.create-room {
       left: 450px;
       box-shadow: -1px 0px 0px 0px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  @bgColor: #6643b5;
+  @buttonBgColor: #c84361;
+  @fullWidth: 100%;
+  @fullHeight: 100%;
+  @pageWidth: 100vw;
+  @pageHeight: 100vh;
+  @formHeight: 160px;
+  @formWidth: 450px;
+  @paddingHeight: 40px;
+  @font: 'Montserrat';
+  @fontColor: white;
+  .app {
+    // background-color: @bgColor;
+    // width: @pageWidth;
+    // height: @pageHeight;
+    .form-divider {
+      // position: absolute;
+      // height: 50px;
+      // width: 50px;
+      // left: 0; right: 0; bottom: 0; top: 0;
+      // border-radius: 50%;
+      // color: white;
+      // background-color: @bgColor;
+      // z-index: 3;
+      // margin: auto;
+      // box-shadow: inset 0px 0px 5px rgba(0,0,0,1);
+      p {
+        // text-align: center;
+        // line-height: 50px;
+        // margin: auto;
+      }
+    }
+    .form-container {
+      // width: @formWidth;
+      // height: @formHeight;
+      // position: absolute;
+      // padding: 0 @paddingHeight;
+      // left: 0; right: 0;
+      // top: 0; bottom: 0;
+      // margin: auto;
+      input, button {
+        // width: @fullWidth;
+        // padding: 0;      
+        // box-sizing: border-box;
+        // height: @paddingHeight;
+        // font-size: 1em;
+      }
+  
+      label {
+        // position: absolute;
+        // line-height: 40px;
+        // text-align: center;
+        // font-size: 1.3em;
+        // left: 0; right: 0;
+        // margin: auto;
+      }
+  
+      input {
+        // padding: 5px;
+        // margin-top: @paddingHeight;
+        // border-bottom: 1px solid white;
+        // margin-bottom: 20px;
+      }
+  
+      &.enter-room {
+        // right: 450px;
+        // box-shadow: 1px 0px 0px 0px rgba(0,0,0,0.5);
+      } 
+  
+      &.create-room {
+        // left: 450px;
+        // box-shadow: -1px 0px 0px 0px rgba(0,0,0,0.5);
+      }
     }
   }
 }
