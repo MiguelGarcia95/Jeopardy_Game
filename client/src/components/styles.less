@@ -66,7 +66,10 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
       text-align: center;
       margin-top: @paddingHeight;
       background-color: #c84361;
+      background-color: @bgColor;
+      border-bottom: 1px solid white;
       color: @fontColor;
+      margin-bottom: 20px;
 
       &::placeholder {color: @fontColor; opacity: 1;}
       &:-ms-input-placeholder {color: @fontColor;}
@@ -74,6 +77,9 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
     }
 
     button {
+      color: @fontColor;
+      // background-color: @bgColor;
+      background-color: #c84361;
     }
 
     &.enter-room {
