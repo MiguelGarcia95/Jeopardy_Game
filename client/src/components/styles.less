@@ -5,8 +5,9 @@
 @fullHeight: 100%;
 @pageWidth: 100vw;
 @pageHeight: 100vh;
-@formHeight: 150px;
+@formHeight: 160px;
 @formWidth: 400px;
+@paddingHeight: 40px;
 
 body {padding: 0; margin: 0;}
 
@@ -18,28 +19,29 @@ body {padding: 0; margin: 0;}
     width: @formWidth;
     height: @formHeight;
     background-color: red;
-    position: relative;
+    // position: relative;
+    padding: 0 @paddingHeight;
+    box-sizing: border-box;
     input, button {
       border: none;
       width: @fullWidth;
       padding: 0;      
       box-sizing: border-box;
-      height: 40px;
-      position: absolute;
+      height: @paddingHeight;
     }
     input {
       padding: 5px;
       text-align: center;
-      top: 20px;
+      margin-top: @paddingHeight;
     }
 
     button {
-      bottom: 20px;
     }
 
     &.enter-room {
 
     } 
+
     &.create-room {
 
     }
