@@ -1,12 +1,47 @@
 //out: styles.css, compress: true, sourcemap: false
 
+@bgColor: #6643b5;
+@fullWidth: 100%;
+@fullHeight: 100%;
+@pageWidth: 100vw;
+@pageHeight: 100vh;
+@formHeight: 150px;
+@formWidth: 400px;
+
+body {padding: 0; margin: 0;}
+
 .app {
+  background-color: @bgColor;
+  width: @pageWidth;
+  height: @pageHeight;
   .form-container {
+    width: @formWidth;
+    height: @formHeight;
+    background-color: red;
+    position: relative;
+    input, button {
+      border: none;
+      width: @fullWidth;
+      padding: 0;      
+      box-sizing: border-box;
+      height: 40px;
+      position: absolute;
+    }
+    input {
+      padding: 5px;
+      text-align: center;
+      top: 20px;
+    }
+
+    button {
+      bottom: 20px;
+    }
+
     &.enter-room {
 
     } 
     &.create-room {
-      
+
     }
   }
 }

@@ -23,7 +23,7 @@ function Home() {
             onChange={(e) => setIdText(e.target.value)} 
           />
 
-          <input type='Enter' />
+          <button>Enter</button>
         </form>
       </section>
 
@@ -35,11 +35,10 @@ function Home() {
             value={roomText} 
             onChange={(e) => setRoomText(e.target.value)} 
           />
-
-          <input type='submit' />
+          <button>Create Game</button>
         </form>
       </section>
-      
+
     </section>
   )
 }
