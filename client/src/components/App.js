@@ -6,19 +6,6 @@ import Room from './room';
 import Page404 from './page404';
 import './App.css';
 
-// class App extends React.Component{
-//   componentDidMount() {
-//     const socket = socketIOClient('http://localhost:5000/');
-//     socket.emit('join', 'test', error => {
-//       if (error) console.log(error)
-//     });
-//     socket.on('greeting', message => {
-//       console.log(message);
-//     })
-//   }
-// }
-
-
 function App() {
   return (
     <BrowserRouter>
