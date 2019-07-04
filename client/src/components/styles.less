@@ -11,6 +11,8 @@
 @paddingHeight: 40px;
 @font: 'Montserrat';
 @fontColor: white;
+@instructionWidth: 600px;
+@instructionHeight: 140px;
 
 body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
 
@@ -18,6 +20,32 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
   background-color: @bgColor;
   width: @pageWidth;
   height: @pageHeight;
+  .title {
+    position: absolute;
+    left: 0; right: 0;
+    width: 300px; 
+    height: 100px;
+    line-height: 100px;
+    margin: auto;
+    font-size: 2em;
+    text-align: center;
+    h1 {margin: 0; font-weight: 300;}
+  }
+  .instructions {
+    position: absolute;
+    width: @instructionWidth;
+    height: @instructionHeight;
+    box-sizing: border-box;
+    padding: 15px;
+    left: 0; bottom: 0;
+    margin: auto;
+    text-align: left;
+    h2 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+    p {line-height: 30px;}
+  }
   .form-divider {
     position: absolute;
     height: 50px;

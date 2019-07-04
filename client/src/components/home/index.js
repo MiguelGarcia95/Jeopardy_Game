@@ -14,7 +14,16 @@ function Home() {
   return (
     <section className='app'>
       <section className='instructions'>
+        <h2>Instructions</h2>
+        <p>
+          <span>If you are joining a game, enter the Room Id you were given on the left.</span>
+          <br />
+          <span>If you are making a new game, enter your room name on the right.</span>
+        </p>
+      </section>
 
+      <section className='title'>
+      <h1>Trivia Game</h1>
       </section>
 
       <section className='form-divider'>
