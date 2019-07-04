@@ -13,6 +13,7 @@ function Home() {
 
   return (
     <section className='app'>
+
       <section className='form-container enter-room'>
         <form onSubmit={onEnter} >
           <input 
@@ -38,6 +39,7 @@ function Home() {
           <input type='submit' />
         </form>
       </section>
+      
     </section>
   )
 }
