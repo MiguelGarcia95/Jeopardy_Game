@@ -6,7 +6,7 @@
 @pageWidth: 100vw;
 @pageHeight: 100vh;
 @formHeight: 160px;
-@formWidth: 400px;
+@formWidth: 450px;
 @paddingHeight: 40px;
 
 body {padding: 0; margin: 0;}
@@ -15,10 +15,26 @@ body {padding: 0; margin: 0;}
   background-color: @bgColor;
   width: @pageWidth;
   height: @pageHeight;
+  .form-divider {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 0; right: 0; bottom: 0; top: 0;
+    border-radius: 50%;
+    color: white;
+    background-color: @bgColor;
+    z-index: 3;
+    margin: auto;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+    p {
+      text-align: center;
+      line-height: 50px;
+      margin: auto;
+    }
+  }
   .form-container {
     width: @formWidth;
     height: @formHeight;
-    // background-color: red;
     position: absolute;
     padding: 0 @paddingHeight;
     box-sizing: border-box;
@@ -31,6 +47,7 @@ body {padding: 0; margin: 0;}
       padding: 0;      
       box-sizing: border-box;
       height: @paddingHeight;
+      font-size: 1em;
     }
     label {
       position: absolute;
@@ -51,13 +68,13 @@ body {padding: 0; margin: 0;}
     }
 
     &.enter-room {
-      // bottom: 160px;
-      left: 400px;
+      right: 450px;
+      box-shadow: 1px 0px 0px 0px rgba(0,0,0,0.5);
     } 
 
     &.create-room {
-      // top: 160px;
-      right: 400px;
+      left: 450px;
+      box-shadow: -1px 0px 0px 0px rgba(0,0,0,0.5);
     }
   }
 }

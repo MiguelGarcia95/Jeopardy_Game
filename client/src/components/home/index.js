@@ -13,7 +13,14 @@ function Home() {
 
   return (
     <section className='app'>
+      <section className='instructions'>
 
+      </section>
+
+      <section className='form-divider'>
+        <p>Or</p>
+      </section>
+      
       <section className='form-container enter-room'>
         <form onSubmit={onEnter} >
           <label htmlFor='input'>Enter Room Id</label>
