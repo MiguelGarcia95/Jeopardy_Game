@@ -1,7 +1,5 @@
 import React from 'react';
-
-function Room() {
-}
+// import socketIOClient from "socket.io-client";
 
 class Room extends React.Component{
   // componentDidMount() {

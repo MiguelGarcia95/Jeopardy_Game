@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Index() {
-  return <h2>Index</h2>;
+  const [roomText, setRoomText] = useState("");
+
+  return (
+    <section className='app'>
+      {roomText}
+      <input placeholder='Game Room' onChange={(e) => setRoomText(e.target.value)} />
+    </section>
+  )
 }
 
 export default Index;
