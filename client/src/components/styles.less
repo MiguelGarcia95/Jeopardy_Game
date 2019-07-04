@@ -85,29 +85,32 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
     }
 
     &.enter-room {
-      right: 450px;
+      right: @formWidth;
       box-shadow: 1px 0px 0px 0px rgba(0,0,0,0.5);
     } 
 
     &.create-room {
-      left: 450px;
+      left: @formWidth;
       box-shadow: -1px 0px 0px 0px rgba(0,0,0,0.5);
     }
   }
 }
 
 @media (max-width: 950px) {
-  @bgColor: #6643b5;
-  @buttonBgColor: #c84361;
-  @fullWidth: 100%;
-  @fullHeight: 100%;
-  @pageWidth: 100vw;
-  @pageHeight: 100vh;
-  @formHeight: 160px;
-  @formWidth: 450px;
-  @paddingHeight: 40px;
-  @font: 'Montserrat';
-  @fontColor: white;
+  @formWidth: 400px;
+  .app {
+    .form-container {
+      width: @formWidth;
+      &.enter-room {right: @formWidth;} 
+      &.create-room {left: @formWidth;}
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  // @formHeight: 160px;
+  @formWidth: 400px;
+  // @paddingHeight: 40px;
   .app {
     // background-color: @bgColor;
     // width: @pageWidth;
@@ -130,7 +133,7 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
       }
     }
     .form-container {
-      // width: @formWidth;
+      width: @formWidth;
       // height: @formHeight;
       // position: absolute;
       // padding: 0 @paddingHeight;
@@ -162,12 +165,12 @@ body {padding: 0; margin: 0; font-family: @font; color: @fontColor;}
       }
   
       &.enter-room {
-        // right: 450px;
+        right: @formWidth;
         // box-shadow: 1px 0px 0px 0px rgba(0,0,0,0.5);
       } 
   
       &.create-room {
-        // left: 450px;
+        left: @formWidth;
         // box-shadow: -1px 0px 0px 0px rgba(0,0,0,0.5);
       }
     }
