@@ -17,6 +17,13 @@ io.on('connection', socket => {
     console.log('Client Joined');
     socket.emit('greeting', {message: 'Hello!'});
   });
+
+  socket.on('createRoom', (room, callback) => {
+    console.log(room);
+    console.log('id: ', socket.id)
+
+  })
+
   socket.on("disconnect", () => console.log("Client Disconnected"));
 })
 

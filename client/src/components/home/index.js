@@ -4,12 +4,13 @@ import socketIOClient from "socket.io-client";
 class Home extends React.Component {
   state = {
     roomText: '',
-    idText: ''
+    idText: '',
+    socket: socketIOClient('http://localhost:5000/')
   }
 
   componentDidMount() {
-    const socket = socketIOClient('http://localhost:5000/');
-    socket.emit('join', 'test', error => {
+    // const socket = socketIOClient('http://localhost:5000/');
+    this.state.socket.emit('join', 'test', error => {
       if (error) console.log(error)
     });
     // socket.on('greeting', message => {
@@ -20,8 +21,16 @@ class Home extends React.Component {
   setIdText = e => this.setState({idText: e.target.value});
   setRoomText = e => this.setState({roomText: e.target.value});
   
-  onSubmit = async e => {
+  onSubmit = e => {
     e.preventDefault();
+    const {socket, roomText} = this.state;
+    socket.emit('createRoom', roomText, error => {
+      if (error) {
+        return console.log(error);
+      } 
+
+      console.log(roomText);
+    });
   };
 
   onEnter = e => {
@@ -58,7 +67,8 @@ class Home extends React.Component {
               id='input'
               placeholder='Enter Room Id Here ...'
               value={idText} 
-              onChange={(e) => this.setIdText(e.target.value)} 
+              autoComplete='off'
+              onChange={this.setIdText} 
             />
             <button>Enter</button>
           </form>
@@ -72,7 +82,8 @@ class Home extends React.Component {
               id='input'
               placeholder='Enter Game Room ...'
               value={roomText} 
-              onChange={(e) => this.setRoomText(e.target.value)} 
+              autoComplete='off'              
+              onChange={this.setRoomText} 
             />
             <button>Create Game</button>
           </form>
