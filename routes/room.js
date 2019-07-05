@@ -3,12 +3,7 @@ const router = express.Router();
 const Room = require('../models/Room');
 // const home_controller = require('../controller/home');
 
-router.get('/', (req, res) => {
-  res.send({response: 'WORKS!'}).status(200);
-});
-
-router.post('/createRoom', async (req, res) => {
-  // console.log(req.body);
+router.post('/room', async (req, res) => {
   const room = new Room(req.body);
   try {
     await room.save();

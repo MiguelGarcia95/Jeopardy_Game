@@ -1,19 +1,24 @@
 const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
-// const path = require('path');
+
+// Server Set Up
 const app = express();
-require('./mongoose');
-
-const home = require('./routes/home');
-const {addGameRoom} = require('./utils/gameRooms');
-
 const port = process.env.PORT || 5000;
 const server = http.createServer(app);
 const io = socketio(server);
+require('./mongoose');
 
-app.use('/', home);
-// app.use(home);
+// Routes
+const room = require('./routes/room');
+const user = require('./routes/user');
+
+// Util Functions
+const {addGameRoom} = require('./utils/gameRooms');
+
+// app.use('/', room);
+app.use(room);
+app.use(user);
 
 io.on('connection', socket => {
   socket.on('join', () => {
