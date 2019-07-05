@@ -1,18 +1,20 @@
 import React from 'react';
-import socketIOClient from "socket.io-client";
+// import socketIOClient from "socket.io-client";
 
 class Home extends React.Component {
   state = {
     roomText: '',
     idText: '',
-    socket: socketIOClient('http://localhost:5000/')
+    // socket: socketIOClient('http://localhost:5000/')
   }
 
   componentDidMount() {
     // const socket = socketIOClient('http://localhost:5000/');
-    this.state.socket.emit('join', 'test', error => {
-      if (error) console.log(error)
-    });
+
+    // this.state.socket.emit('join', 'test', error => {
+    //   if (error) console.log(error)
+    // });
+
     // socket.on('greeting', message => {
     //   console.log(message);
     // })
@@ -23,14 +25,12 @@ class Home extends React.Component {
   
   onSubmit = e => {
     e.preventDefault();
-    const {socket, roomText} = this.state;
-    socket.emit('createRoom', roomText, error => {
-      if (error) {
-        return console.log(error);
-      } 
-
-      console.log(roomText);
-    });
+    // const {socket, roomText} = this.state;
+    // socket.emit('createRoom', roomText, error => {
+    //   if (error) {
+    //     return console.log(error);
+    //   } 
+    // });
   };
 
   onEnter = e => {

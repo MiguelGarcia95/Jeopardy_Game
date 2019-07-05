@@ -4,7 +4,7 @@ const games = [];
 
 // Add Game Room
 const addGameRoom = async ({id, gameroom}) => {
-  const room = new Room(req.body);
+  const room = new Room({id, room: gameroom});
 
   // clean data 
   gameroom = gameroom.trim().toLowerCase();

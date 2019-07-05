@@ -12,8 +12,8 @@ const port = process.env.PORT || 5000;
 const server = http.createServer(app);
 const io = socketio(server);
 
-// app.use('/', home);
-app.use(home);
+app.use('/', home);
+// app.use(home);
 
 io.on('connection', socket => {
   socket.on('join', () => {
@@ -22,10 +22,9 @@ io.on('connection', socket => {
   });
 
   socket.on('createRoom', (room, callback) => {
-    console.log(room);
-    console.log('id: ', socket.id)
-    addGameRoom({id: socket.id, gameroom: room});
-
+    const createdRoom = addGameRoom({id: socket.id, gameroom: room});
+    socket.emit('createdRoom', {room: createdRoom});
+    callback();
   })
 
   socket.on("disconnect", () => console.log("Client Disconnected"));
