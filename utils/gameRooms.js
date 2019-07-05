@@ -1,7 +1,11 @@
+const Room = require('../models/Room');
+
 const games = [];
 
 // Add Game Room
-const addGameRoom = ({id, gameroom}) => {
+const addGameRoom = async ({id, gameroom}) => {
+  const room = new Room(req.body);
+
   // clean data 
   gameroom = gameroom.trim().toLowerCase();
 
@@ -13,5 +17,12 @@ const addGameRoom = ({id, gameroom}) => {
   // Check if gameroom exists 
 
   const gameRoom = {id, room: gameroom}
+
+  await room.save();
+
   return gameRoom;
+}
+
+module.exports = {
+  addGameRoom
 }
